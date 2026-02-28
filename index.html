@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+            
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <nav class="navbar">
+        <div class="logo">TravelExplorer</div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+            
+            <section id="home" class="section home">
+                <h1>Explore the World</h1>
+                <p>Your journey begins here</p>
+            </section>
+
+    <section id="destinations" class="section">
+        <h2>Popular Destinations</h2>
+        <p class="section-subtitle">Discover the world's most breathtaking locations</p>
+        
+        <!-- Search & Filter Section -->
+        <div class="search-filter-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search destinations (Paris, Maldives, Bali, Tokyo, Dubai, New York)..." autocomplete="off" />
+                <div id="searchSuggestions" class="search-suggestions"></div>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label><i class="fas fa-rupee-sign"></i> Price Range</label>
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="0-50000">Under ₹50,000</option>
+                        <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                        <option value="100000-150000">₹1,00,000 - ₹1,50,000</option>
+                        <option value="150000-999999">Above ₹1,50,000</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-globe"></i> Region</label>
+                    <select id="regionFilter">
+                        <option value="all">All Regions</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                        <option value="middle-east">Middle East</option>
+                        <option value="americas">Americas</option>
+                        <option value="islands">Islands</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-heart"></i> Trip Type</label>
+                    <select id="tripTypeFilter">
+                        <option value="all">All Types</option>
+                        <option value="romantic">Romantic</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="family">Family</option>
+                        <option value="cultural">Cultural</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-sort"></i> Sort By</label>
+                    <select id="sortFilter">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="popularity">Most Popular</option>
+                    </select>
+                </div>
+                
+                <button id="resetFilters" class="reset-btn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+        </div>
+        
+        <div id="resultsCount" class="results-count"></div>
+        
+        <div class="destination-grid">
+            <div class="destination-card" data-price="107817" data-region="europe" data-type="romantic" data-rating="4.8" data-popularity="95">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
+                <div class="destination-info">
+                    <div class="rating-badge">
+                        <i class="fas fa-star"></i> 4.8
+                    </div>
+                    <h3>Paris, France</h3>
+                    <p>The City of Light awaits with its romantic charm</p>
+                    <div class="price">From ₹1,07,817</div>
+                    <a href="pages/paris.html" class="btn">Explore More</a>
+                </div>
+            </div>
+            <div class="destination-card" data-price="207417" data-region="islands" data-type="luxury" data-rating="4.9" data-popularity="98">
+                <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8" alt="Maldives">
+                <div class="destination-info">
+                    <div class="rating-badge">
+                        <i class="fas fa-star"></i> 4.9
+                    </div>
+                    <h3>Maldives</h3>
+                    <p>Pristine beaches and crystal-clear waters</p>
+                    <div class="price">From ₹2,07,417</div>
+                    <a href="pages/maldives.html" class="btn">Explore More</a>
+                </div>
+            </div>
+            <div class="destination-card" data-price="74617" data-region="asia" data-type="adventure" data-rating="4.7" data-popularity="92">
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4" alt="Bali">
+                <div class="destination-info">
+                    <div class="rating-badge">
+                        <i class="fas fa-star"></i> 4.7
+                    </div>
+                    <h3>Bali, Indonesia</h3>
+                    <p>Tropical paradise with rich culture</p>
+                    <div class="price">From ₹74,617</div>
+                    <a href="pages/bali.html" class="btn">Explore More</a>
+                </div>
+            </div>
+            <div class="destination-card" data-price="149317" data-region="asia" data-type="cultural" data-rating="4.8" data-popularity="90">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf" alt="Tokyo">
+                <div class="destination-info">
+                    <div class="rating-badge">
+                        <i class="fas fa-star"></i> 4.8
+                    </div>
+                    <h3>Tokyo, Japan</h3>
+                    <p>Where tradition meets innovation</p>
+                    <div class="price">From ₹1,49,317</div>
+                    <a href="pages/tokyo.html" class="btn">Explore More</a>
+                </div>
+            </div>
+            <div class="destination-card" data-price="132717" data-region="middle-east" data-type="luxury" data-rating="4.6" data-popularity="88">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt="Dubai">
+                <div class="destination-info">
+                    <div class="rating-badge">
+                        <i class="fas fa-star"></i> 4.6
+                    </div>
+                    <h3>Dubai, UAE</h3>
+                    <p>Luxury and adventure in the desert</p>
+                    <div class="price">From ₹1,32,717</div>
+                    <a href="pages/dubai.html" class="btn">Explore More</a>
+                </div>
+            </div>
+            <div class="destination-card" data-price="99517" data-region="americas" data-type="family" data-rating="4.7" data-popularity="93">
+                <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74" alt="New York">
+                <div class="destination-info">
+                    <div class="rating-badge">
+                        <i class="fas fa-star"></i> 4.7
+                    </div>
+                    <h3>New York, USA</h3>
+                    <p>The city that never sleeps</p>
+                    <div class="price">From ₹99,517</div>
+                    <a href="pages/newyork.html" class="btn">Explore More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Packages Section -->
+    <section id="packages" class="section packages-section">
+        <h2>Featured Travel Packages</h2>
+        <p class="section-subtitle">Handpicked deals for unforgettable experiences</p>
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-badge">Best Seller</div>
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1" alt="Europe Tour">
+                <div class="package-content">
+                    <h3>Grand Europe Tour</h3>
+                    <div class="package-details">
+                        <span><i class="fas fa-clock"></i> 12 Days</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 5 Countries</span>
+                    </div>
+                    <p>Explore Paris, Rome, Barcelona, Amsterdam & London</p>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 4-Star Hotels</li>
+                        <li><i class="fas fa-check"></i> Daily Breakfast</li>
+                        <li><i class="fas fa-check"></i> Guided Tours</li>
+                        <li><i class="fas fa-check"></i> Airport Transfers</li>
+                    </ul>
+                    <div class="package-footer">
+                        <div class="package-price">
+                            <span class="old-price">₹3,31,917</span>
+                            <span class="new-price">₹2,73,817</span>
+                        </div>
+                        <a href="#" class="btn-book">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="package-badge popular">Popular</div>
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19" alt="Tropical Paradise">
+                <div class="package-content">
+                    <h3>Tropical Paradise Escape</h3>
+                    <div class="package-details">
+                        <span><i class="fas fa-clock"></i> 7 Days</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Maldives</span>
+                    </div>
+                    <p>All-inclusive luxury resort experience</p>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 5-Star Resort</li>
+                        <li><i class="fas fa-check"></i> All Meals Included</li>
+                        <li><i class="fas fa-check"></i> Water Sports</li>
+                        <li><i class="fas fa-check"></i> Spa Access</li>
+                    </ul>
+                    <div class="package-footer">
+                        <div class="package-price">
+                            <span class="old-price">₹2,40,617</span>
+                            <span class="new-price">₹2,07,417</span>
+                        </div>
+                        <a href="#" class="btn-book">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="package-badge adventure">Adventure</div>
+                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53" alt="Asian Adventure">
+                <div class="package-content">
+                    <h3>Asian Cultural Journey</h3>
+                    <div class="package-details">
+                        <span><i class="fas fa-clock"></i> 10 Days</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Thailand & Bali</span>
+                    </div>
+                    <p>Discover temples, beaches & local cuisine</p>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Boutique Hotels</li>
+                        <li><i class="fas fa-check"></i> Temple Tours</li>
+                        <li><i class="fas fa-check"></i> Cooking Classes</li>
+                        <li><i class="fas fa-check"></i> Beach Activities</li>
+                    </ul>
+                    <div class="package-footer">
+                        <div class="package-price">
+                            <span class="old-price">₹1,32,717</span>
+                            <span class="new-price">₹1,07,817</span>
+                        </div>
+                        <a href="#" class="btn-book">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+        <h2>What Our Travelers Say</h2>
+        <p class="section-subtitle">Real experiences from real adventurers</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The Europe tour was absolutely incredible! Every detail was perfectly planned. Our guide was knowledgeable and friendly. This was the trip of a lifetime!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Grand Europe Tour</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The Maldives package exceeded all expectations. The resort was stunning, and the service was impeccable. Already planning my next trip with TravelExplorer!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                    <div>
+                        <h4>Michael Chen</h4>
+                        <p>Tropical Paradise Escape</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Exploring Thailand and Bali was a dream come true. The itinerary was perfect, balancing culture, adventure, and relaxation. Highly recommend TravelExplorer!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Williams">
+                    <div>
+                        <h4>Emma Williams</h4>
+                        <p>Asian Cultural Journey</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"Tokyo was amazing! The blend of traditional and modern culture was fascinating. Great hotels, delicious food, and seamless organization throughout."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="David Martinez">
+                    <div>
+                        <h4>David Martinez</h4>
+                        <p>Japan Discovery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+            <section id="about" class="section">
+                <h2>About Us</h2>
+                <p>
+                    We are a leading travel company helping people explore the world
+                    with affordable and customized travel packages.
+                </p>
+            </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <p class="section-subtitle">Got questions? We've got answers!</p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I book a trip?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Booking with TravelExplorer is easy! Simply browse our destinations, select your preferred package, click "Book Now", and fill out the booking form. You can also call us at +1-800-TRAVEL or email info@travelexplorer.com for personalized assistance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What payment methods do you accept?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept all major credit cards (Visa, MasterCard, American Express), debit cards, UPI, net banking, and digital wallets. We also offer easy EMI options for bookings above ₹50,000. All payments are 100% secure and encrypted.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is your cancellation policy?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Cancellations made 30+ days before departure: Full refund minus ₹5,000 processing fee<br>
+                    15-29 days before: 50% refund<br>
+                    7-14 days before: 25% refund<br>
+                    Less than 7 days: No refund<br>
+                    We recommend purchasing travel insurance for maximum protection.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do I need a visa for international destinations?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Visa requirements vary by destination and your nationality. Most destinations offer visa-on-arrival or e-visa for Indian passport holders. Our team will provide detailed visa information and assistance once you book your trip. We also offer visa processing services for an additional fee.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What's included in the package price?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our packages typically include accommodation, daily breakfast, airport transfers, sightseeing tours, and local guide services. Specific inclusions vary by package - check each destination's "Package Includes" section for details. International flights, lunch/dinner (unless specified), and personal expenses are usually not included.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I customize my travel package?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We specialize in customized travel experiences. Contact our travel consultants to discuss your preferences, budget, and interests. We can adjust accommodation levels, add extra destinations, include special activities, or create a completely bespoke itinerary just for you.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer group discounts?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer attractive discounts for group bookings. Groups of 6-10 people get 10% off, and groups of 11+ get 15% off. Perfect for family reunions, corporate trips, or traveling with friends. Contact us for a customized group quote.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is travel insurance included?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Basic travel insurance is included in all our international packages covering medical emergencies up to ₹5,00,000. We also offer comprehensive insurance upgrades covering trip cancellations, lost baggage, flight delays, and adventure activities. We highly recommend upgrading for complete peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+            <section id="contact" class="section">
+                <h2>Contact Us</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+
+    <footer>
+        <p>© 2026 TravelExplorer. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

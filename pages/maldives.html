@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maldives - TravelExplorer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/destination.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">TravelExplorer</div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#destinations">Destinations</a></li>
+            <li><a href="../index.html#packages">Packages</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="destination-hero" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8') center/cover;">
+        <div class="hero-content">
+            <h1>Maldives</h1>
+            <p>Tropical Paradise - Pristine Beaches & Crystal Waters</p>
+        </div>
+    </section>
+
+    <section class="destination-details">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-main">
+                    <h2>Experience Paradise on Earth</h2>
+                    <p>Escape to the Maldives, where turquoise waters meet white sandy beaches. This island paradise offers luxury resorts, world-class diving, and the ultimate tropical getaway for honeymooners and beach lovers alike.</p>
+                    
+                    <h3><i class="fas fa-map-marked-alt"></i> Highlights</h3>
+                    <div class="highlights-grid">
+                        <div class="highlight-item">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <h4>Private Islands</h4>
+                            <p>Exclusive resort experiences</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-water"></i>
+                            <h4>Water Sports</h4>
+                            <p>Diving, snorkeling & surfing</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-fish"></i>
+                            <h4>Marine Life</h4>
+                            <p>Coral reefs & sea turtles</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-spa"></i>
+                            <h4>Luxury Spas</h4>
+                            <p>World-class wellness centers</p>
+                        </div>
+                    </div>
+
+                    <h3><i class="fas fa-calendar-alt"></i> Sample Itinerary (7 Days)</h3>
+                    <div class="itinerary">
+                        <div class="itinerary-day">
+                            <div class="day-number">Day 1</div>
+                            <div class="day-content">
+                                <h4>Arrival & Resort Check-in</h4>
+                                <p>Seaplane transfer to resort, welcome cocktail, sunset beach walk</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <div class="day-number">Day 2-3</div>
+                            <div class="day-content">
+                                <h4>Beach & Water Activities</h4>
+                                <p>Snorkeling excursions, kayaking, paddleboarding, beach relaxation</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <div class="day-number">Day 4</div>
+                            <div class="day-content">
+                                <h4>Diving Adventure</h4>
+                                <p>Scuba diving at famous dive sites, explore coral reefs</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <div class="day-number">Day 5</div>
+                            <div class="day-content">
+                                <h4>Island Hopping</h4>
+                                <p>Visit local islands, cultural experience, sunset fishing</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <div class="day-number">Day 6</div>
+                            <div class="day-content">
+                                <h4>Spa & Relaxation</h4>
+                                <p>Couple's spa treatments, private beach dinner, stargazing</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <div class="day-number">Day 7</div>
+                            <div class="day-content">
+                                <h4>Departure</h4>
+                                <p>Morning swim, checkout, seaplane transfer to airport</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3><i class="fas fa-images"></i> Gallery</h3>
+                    <div class="photo-gallery">
+                        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd" alt="Maldives Beach">
+                        <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b" alt="Water Villa">
+                        <img src="https://images.unsplash.com/photo-1571501679680-de32f1e7aad4" alt="Underwater">
+                        <img src="https://images.unsplash.com/photo-1589197331516-6c0c5c0d0c91" alt="Sunset">
+                    </div>
+                </div>
+
+                <div class="detail-sidebar">
+                    <!-- Trip Cost Calculator -->
+                    <div class="calculator-card">
+                        <h3><i class="fas fa-calculator"></i> Trip Cost Calculator</h3>
+                        <div class="calculator-form">
+                            <div class="calc-group">
+                                <label><i class="fas fa-calendar-alt"></i> Number of Days</label>
+                                <input type="number" id="calcDays" value="7" min="1" max="30">
+                            </div>
+                            <div class="calc-group">
+                                <label><i class="fas fa-users"></i> Number of Travelers</label>
+                                <input type="number" id="calcTravelers" value="2" min="1" max="20">
+                            </div>
+                            <div class="calc-group">
+                                <label><i class="fas fa-bed"></i> Accommodation Type</label>
+                                <select id="calcAccommodation">
+                                    <option value="29631">Water Villa (₹29,631/night)</option>
+                                    <option value="41583">Beach Villa (₹41,583/night)</option>
+                                    <option value="62217">Luxury Suite (₹62,217/night)</option>
+                                </select>
+                            </div>
+                            <div class="calc-group">
+                                <label><i class="fas fa-utensils"></i> Meal Plan</label>
+                                <select id="calcMealPlan">
+                                    <option value="0">Breakfast Only (Included)</option>
+                                    <option value="3331">Half Board +₹3,331/day</option>
+                                    <option value="5831">All Inclusive +₹5,831/day</option>
+                                </select>
+                            </div>
+                            <div class="calc-group">
+                                <label><i class="fas fa-plus-circle"></i> Add-ons</label>
+                                <div class="addon-checkbox">
+                                    <input type="checkbox" id="addonDiving" value="16583">
+                                    <label for="addonDiving">Scuba Diving (₹16,583/person)</label>
+                                </div>
+                                <div class="addon-checkbox">
+                                    <input type="checkbox" id="addonSpa" value="8317">
+                                    <label for="addonSpa">Spa Package (₹8,317/person)</label>
+                                </div>
+                                <div class="addon-checkbox">
+                                    <input type="checkbox" id="addonPhotography" value="12467">
+                                    <label for="addonPhotography">Professional Photography (₹12,467)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc-result">
+                            <div class="calc-breakdown">
+                                <div class="breakdown-item">
+                                    <span>Accommodation:</span>
+                                    <span id="breakdownAccom">₹2,07,417</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>Meals:</span>
+                                    <span id="breakdownMeals">₹0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>Add-ons:</span>
+                                    <span id="breakdownAddons">₹0</span>
+                                </div>
+                                <div class="breakdown-item total">
+                                    <span>Total Cost:</span>
+                                    <span id="totalCost">₹2,07,417</span>
+                                </div>
+                                <div class="breakdown-item per-person">
+                                    <span>Per Person:</span>
+                                    <span id="perPersonCost">₹1,03,709</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-card">
+                        <h3>Book This Destination</h3>
+                        <div class="price-display">
+                            <span class="from-text">Starting from</span>
+                            <span class="price-large">₹2,07,417</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        
+                        <div class="package-includes">
+                            <h4>Package Includes:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 6 nights water villa</li>
+                                <li><i class="fas fa-check"></i> All meals included</li>
+                                <li><i class="fas fa-check"></i> Seaplane transfers</li>
+                                <li><i class="fas fa-check"></i> Water sports activities</li>
+                                <li><i class="fas fa-check"></i> Spa credits</li>
+                            </ul>
+                        </div>
+
+                        <button class="book-now-btn" onclick="alert('Booking system coming soon! Call us at +1-800-TRAVEL')">
+                            <i class="fas fa-calendar-check"></i> Book Now
+                        </button>
+                        
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> +1-800-TRAVEL</p>
+                            <p><i class="fas fa-envelope"></i> info@travelexplorer.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h4><i class="fas fa-info-circle"></i> Travel Info</h4>
+                        <ul class="info-list">
+                            <li><strong>Best Time:</strong> November-April</li>
+                            <li><strong>Language:</strong> Dhivehi, English</li>
+                            <li><strong>Currency:</strong> Maldivian Rufiyaa</li>
+                            <li><strong>Time Zone:</strong> MVT (UTC+5)</li>
+                            <li><strong>Visa:</strong> Free on arrival</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 TravelExplorer. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
